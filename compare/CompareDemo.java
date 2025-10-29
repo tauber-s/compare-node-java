@@ -3,7 +3,7 @@ import java.net.URI;
 import java.util.*;
 import java.util.concurrent.*;
 
-public class Demo {
+public class CompareDemo {
     public static void main(String[] args) throws Exception {
         HttpClient client = HttpClient.newHttpClient();
         long start = System.currentTimeMillis();
