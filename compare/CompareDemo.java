@@ -3,8 +3,8 @@ import java.net.URI;
 import java.util.*;
 import java.util.concurrent.*;
 
-public class CompareDemo {
-    public static void main(String[] args) throws Exception {
+public class CompareDemo extends Thread {
+    public void run() {
         HttpClient client = HttpClient.newHttpClient();
         long start = System.currentTimeMillis();
         List<CompletableFuture<Void>> tasks = new ArrayList<>();
@@ -20,5 +20,9 @@ public class CompareDemo {
 
         long end = System.currentTimeMillis();
         System.out.println("[Java] total time: " + (end - start) + "ms");
+    }
+    public static void main(String[] args) throws Exception {
+        CompareDemo thread = new CompareDemo();
+        thread.start();
     }
 }
